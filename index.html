@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Book-Shop</title>
+  </head>
+  <body onload="init()">
+    <div class="wrapper">
+      <section class="book-details" hidden></section>
+      <section class="new-book">
+        <input type="text" name="name" placeholder="name" />
+        <input type="text" name="price" placeholder="price" />
+        <button onclick="onAddBook()">Add</button>
+      </section>
+      <section class="books-container">
+        <div class="row">
+          <div class="cell head id" onclick="onSort('id')">
+            <h2>ID</h2>
+          </div>
+          <div class="cell head title" onclick="onSort('title')">
+            <h2>Title</h2>
+          </div>
+          <div class="cell head price" onclick="onSort('price')">
+            <h2>price</h2>
+          </div>
+          <div class="cell actions"><h2>Actions</h2></div>
+        </div>
+        <div class="books-content-container"></div>
+      </section>
+      <section class="page">
+        <button class="nextPage" onclick="onNextPage(-1)">-</button>
+        <button class="nextPage" onclick="onNextPage(+1)">+</button>
+      </section>
+    </div>
+    <script src="js/util-service.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/book-controller.js"></script>
+  </body>
+</html>
